@@ -10,5 +10,50 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{};
+    Tawk_API.customStyle = {
+        visibility : {
+            desktop : {
+                position : 'br', // bottom right
+                xOffset : '20px',
+                yOffset : '20px'
+            },
+            mobile : {
+                position : 'br',
+                xOffset : '10px',
+                yOffset : '10px'
+            }
+        },
+        widget : {
+            theme: 'purple', // matches your site's theme
+            header : {
+                background : '#6B46C1' // matches Tailwind's purple-600
+            }
+        },
+        bubble : {
+            background : '#6B46C1', // chat bubble background color
+            messageBackground : '#F3F4F6' // message bubble background
+        }
+    };
+    
+    // You can also customize the chat icon by setting an image URL
+    Tawk_API.onLoad = function(){
+        Tawk_API.setWidgetIcon('./src/assets/images/support.png'); // Replace with your icon URL
+    };
+
+    var Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67d9de20468038190adb64dc/1imlgnc3g';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
   </body>
 </html>

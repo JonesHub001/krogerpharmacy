@@ -90,6 +90,86 @@ const successStories = [
     ],
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
   },
+  {
+    id: 6,
+    category: '50plus',
+    name: 'Robert Chen',
+    weightLost: 75,
+    duration: '10 months',
+    medication: 'Wegovy',
+    quote: "The journey wasn't just about weight loss; it was about reclaiming my health and confidence. The results speak for themselves.",
+    tips: [
+      "Make small, sustainable changes",
+      "Find an exercise you enjoy",
+      "Keep a food diary",
+      "Build a support network"
+    ],
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: 7,
+    category: '25to50',
+    name: 'Amanda Foster',
+    weightLost: 45,
+    duration: '6 months',
+    medication: 'Mounjaro',
+    quote: "The medication helped control my appetite, and with the right guidance, I achieved more than I thought possible.",
+    tips: [
+      "Meal prep is key",
+      "Stay accountable",
+      "Celebrate non-scale victories",
+      "Find healthy alternatives to favorite foods"
+    ],
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: 8,
+    category: 'under25',
+    name: 'James Parker',
+    weightLost: 22,
+    duration: '3.5 months',
+    medication: 'Semaglutide',
+    quote: "Even a moderate weight loss made a significant impact on my health and daily life. The professional support was invaluable.",
+    tips: [
+      "Focus on progress, not perfection",
+      "Regular health check-ups",
+      "Stay consistent with medication",
+      "Find healthy stress management techniques"
+    ],
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: 9,
+    category: '50plus',
+    name: 'Lisa Martinez',
+    weightLost: 60,
+    duration: '7 months',
+    medication: 'Tirzepatide',
+    quote: "The comprehensive approach to weight management, combining medication with lifestyle changes, was exactly what I needed.",
+    tips: [
+      "Trust the process",
+      "Stay patient with results",
+      "Build healthy habits gradually",
+      "Keep moving, even on tough days"
+    ],
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: 10,
+    category: '25to50',
+    name: 'Thomas Wright',
+    weightLost: 38,
+    duration: '5 months',
+    medication: 'Wegovy',
+    quote: "The structured program and medical supervision gave me the confidence to pursue my weight loss goals effectively.",
+    tips: [
+      "Set both short and long-term goals",
+      "Track progress regularly",
+      "Stay connected with healthcare team",
+      "Find joy in the journey"
+    ],
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800",
+  }
 ];
 
 export default function SuccessStories() {

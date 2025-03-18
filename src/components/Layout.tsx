@@ -1,10 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog } from '@headlessui/react';
 import {
   Bars3Icon,
   XMarkIcon,
-  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/24/outline';
 import { ShieldCheckIcon } from '@heroicons/react/24/solid';
 
@@ -18,7 +17,6 @@ const navigation = [
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <div className="bg-white">
@@ -103,54 +101,6 @@ export default function Layout() {
       <main className="min-h-screen pt-16">
         <Outlet />
       </main>
-
-      {/* Floating chat button */}
-      <button
-        onClick={() => setChatOpen(!chatOpen)}
-        className="fixed bottom-4 right-4 rounded-full bg-purple-600 p-4 text-white shadow-lg hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-      >
-        <ChatBubbleLeftRightIcon className="h-6 w-6" />
-      </button>
-
-      {/* Chat dialog */}
-      <Transition.Root show={chatOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={setChatOpen}>
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          <div className="fixed inset-0 overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                    <div className="px-4 py-6 sm:px-6">
-                      <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                          Live Support
-                        </Dialog.Title>
-                        <div className="ml-3 flex h-7 items-center">
-                          <button
-                            type="button"
-                            className="rounded-md bg-white text-gray-400 hover:text-gray-500"
-                            onClick={() => setChatOpen(false)}
-                          >
-                            <span className="sr-only">Close panel</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative flex-1 px-4 py-6 sm:px-6">
-                      {/* Chat content will go here */}
-                      <div className="text-center text-gray-500">
-                        Our medical professionals are here to help. Start a conversation to learn more about our products and services.
-                      </div>
-                    </div>
-                  </div>
-                </Dialog.Panel>
-              </div>
-            </div>
-          </div>
-        </Dialog>
-      </Transition.Root>
 
       {/* Footer */}
       <footer className="bg-gray-50">

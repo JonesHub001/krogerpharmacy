@@ -66,9 +66,9 @@ const About = () => {
       </div>
 
       {/* Transformation Gallery section */}
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
+          <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <h2 className="text-base font-semibold leading-7 text-purple-600">Success Stories</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Real Results, Real Transformations
@@ -77,161 +77,27 @@ const About = () => {
               Join thousands who have achieved their weight management goals through our medically-supervised programs.
             </p>
           </div>
-          <div className="mx-auto mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
-            {/* Large featured transformation */}
-            <div className="group relative lg:col-span-8 lg:row-span-2">
-              <div className="aspect-[16/9] overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Featured Transformation"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-lg font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Sarah's Journey
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">6 months progress</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+              <div key={index} className="group relative overflow-hidden">
+                <div className="aspect-square">
+                  <img
+                    src={`https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800&h=800`}
+                    alt={`Transformation ${index}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-lg font-medium text-white">
+                        Sarah's Journey
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-300">6 months progress</p>
+                      <p className="text-purple-300 font-medium">-45 lbs</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-lg font-medium text-purple-600">-45 lbs</p>
               </div>
-            </div>
-
-            {/* Medium transformation */}
-            <div className="group relative lg:col-span-4">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 2"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-base font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Michael's Success
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">8 months progress</p>
-                </div>
-                <p className="text-base font-medium text-purple-600">-60 lbs</p>
-              </div>
-            </div>
-
-            {/* Small transformation */}
-            <div className="group relative lg:col-span-4">
-              <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 3"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Jennifer's Story
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">4 months progress</p>
-                </div>
-                <p className="text-sm font-medium text-purple-600">-35 lbs</p>
-              </div>
-            </div>
-
-            {/* Medium transformation */}
-            <div className="group relative lg:col-span-6">
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 4"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-base font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    David's Achievement
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">12 months progress</p>
-                </div>
-                <p className="text-base font-medium text-purple-600">-80 lbs</p>
-              </div>
-            </div>
-
-            {/* Small transformation */}
-            <div className="group relative lg:col-span-3">
-              <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 5"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Emily's Progress
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">6 months progress</p>
-                </div>
-                <p className="text-sm font-medium text-purple-600">-40 lbs</p>
-              </div>
-            </div>
-
-            {/* Medium transformation */}
-            <div className="group relative lg:col-span-3">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 6"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-base font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Robert's Journey
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">9 months progress</p>
-                </div>
-                <p className="text-base font-medium text-purple-600">-55 lbs</p>
-              </div>
-            </div>
-
-            {/* Large transformation */}
-            <div className="group relative lg:col-span-6">
-              <div className="aspect-[16/9] overflow-hidden rounded-lg bg-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800"
-                  alt="Transformation 7"
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-lg font-medium text-gray-700">
-                    <span className="absolute inset-0" />
-                    Lisa's Success
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">7 months progress</p>
-                </div>
-                <p className="text-lg font-medium text-purple-600">-50 lbs</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="#products"
-              className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
-            >
-              Start Your Transformation Journey
-            </a>
+            ))}
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { StarIcon } from '@heroicons/react/20/solid';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import { Footer } from '../components/Footer';
+import LiveOrderLedger from '../components/Home/LiveOrderLedger';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -195,50 +196,14 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Trust Building section */}
-      <motion.div 
-        className="bg-white py-24 sm:py-32"
+      {/* Live Order Ledger section */}
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.3 }}
+        transition={{ duration: 1, delay: 0.2 }}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-purple-600">Why Choose Us</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Your Safety is Our Priority
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  Licensed Pharmacy
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">Fully licensed and regulated pharmacy with verified credentials</p>
-                </dd>
-              </div>
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  Secure Transactions
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">SSL-encrypted payments and HIPAA-compliant data handling</p>
-                </dd>
-              </div>
-              <div className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  Professional Support
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">24/7 access to licensed healthcare professionals</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
+        <LiveOrderLedger />
       </motion.div>
 
       {/* Testimonials section */}
