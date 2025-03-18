@@ -1,16 +1,25 @@
-import React from 'react';
-
-export default function About() {
+const About = () => {
   return (
     <div className="bg-white">
       {/* Hero section */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-purple-100/20">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Kroger Pharmacy</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Established in 2021, we're committed to providing safe, effective, and professional weight management solutions.
-            </p>
+          <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Kroger Pharmacy</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Established in 2021, we're committed to providing safe, effective, and professional weight management solutions.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+                alt="Modern pharmacy interior"
+                className="w-full h-full object-cover rounded-2xl shadow-xl ring-1 ring-gray-400/10"
+              />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-purple-600 rounded-full opacity-20 blur-2xl"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -273,4 +282,6 @@ export default function About() {
       </div>
     </div>
   );
-}
+};
+
+export default About;
