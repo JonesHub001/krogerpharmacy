@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -66,6 +67,16 @@ const products: Product[] = [
 
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const navigate = useNavigate();
+
+  const handleOrder = (product: Product) => {
+    navigate('/order', {
+      state: {
+        medication: product.id.toString(),
+        medicationName: product.name,
+      }
+    });
+  };
 
   return (
     <div className="bg-white">
@@ -157,10 +168,17 @@ export default function Products() {
                   </div>
                 </div>
               </div>
-              <div className="mt-5 sm:mt-6">
+              <div className="mt-5 sm:mt-6 space-y-3">
                 <button
                   type="button"
                   className="inline-flex w-full justify-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+                  onClick={() => handleOrder(selectedProduct)}
+                >
+                  Order Now
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex w-full justify-center rounded-md bg-gray-200 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
                   onClick={() => setSelectedProduct(null)}
                 >
                   Close

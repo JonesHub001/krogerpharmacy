@@ -1,4 +1,5 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react';
+import React, { useState, FormEvent, ChangeEvent, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface FormData {
   name: string;
@@ -26,6 +27,11 @@ interface Medication {
   dosages: string[];
 }
 
+interface LocationState {
+  medication?: string;
+  medicationName?: string;
+}
+
 // Mock data - replace with your actual product data
 const medications: Medication[] = [
   {
@@ -46,18 +52,31 @@ const medications: Medication[] = [
 ];
 
 const OrderForm: React.FC = () => {
-  const [selectedMedication, setSelectedMedication] = useState<string>('');
+  const location = useLocation();
+  const state = location.state as LocationState;
+
+  const [selectedMedication, setSelectedMedication] = useState<string>(state?.medication || '');
   const [prescriptionFile, setPrescriptionFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
     address: '',
-    medication: '',
+    medication: state?.medication || '',
     dosage: '',
     notes: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
+
+  useEffect(() => {
+    if (state?.medication) {
+      setSelectedMedication(state.medication);
+      setFormData(prev => ({
+        ...prev,
+        medication: state.medication || '' // Ensure it's always a string
+      }));
+    }
+  }, [state?.medication]);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -69,9 +88,9 @@ const OrderForm: React.FC = () => {
     if (!formData.address) newErrors.address = 'Address is required';
     if (!formData.medication) newErrors.medication = 'Please select a medication';
     if (!formData.dosage) newErrors.dosage = 'Please select a dosage';
-    if (!prescriptionFile) {
-      newErrors.prescriptionFile = 'Prescription file is required';
-    } else if (prescriptionFile.type !== 'application/pdf') {
+    
+    // Only validate prescription file if one is uploaded
+    if (prescriptionFile && prescriptionFile.type !== 'application/pdf') {
       newErrors.prescriptionFile = 'Only PDF files are accepted';
     }
 
@@ -251,7 +270,7 @@ const OrderForm: React.FC = () => {
         {/* Prescription Upload */}
         <div>
           <label htmlFor="prescriptionFile" className="block text-sm font-medium text-gray-700">
-            Upload Prescription (PDF only)
+            Upload Prescription (Optional, PDF only)
           </label>
           <input
             type="file"

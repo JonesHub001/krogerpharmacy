@@ -11,6 +11,7 @@ import { ShieldCheckIcon } from '@heroicons/react/24/solid';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
+  { name: 'Order Now', href: '/order' },
   { name: 'Success Stories', href: '/success-stories' },
   { name: 'About Us', href: '/about' },
 ];
@@ -54,12 +55,7 @@ export default function Layout() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <button
-              type="button"
-              className="rounded-md bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500"
-            >
-              Sign in with Google
-            </button>
+            {/* Sign-in button removed */}
           </div>
         </nav>
 
@@ -96,14 +92,6 @@ export default function Layout() {
                       {item.name}
                     </Link>
                   ))}
-                </div>
-                <div className="py-6">
-                  <button
-                    type="button"
-                    className="w-full rounded-md bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500"
-                  >
-                    Sign in with Google
-                  </button>
                 </div>
               </div>
             </div>
