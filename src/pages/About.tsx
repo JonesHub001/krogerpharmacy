@@ -151,7 +151,7 @@ const About = () => {
                 location: "California"
               },
               {
-                name: "James Wilson",
+                name: "Jane Wilson",
                 image: sbs4,
                 duration: "7 months progress",
                 weightLoss: "48 lbs",

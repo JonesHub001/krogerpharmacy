@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import mounjaro from '../assets/images/mounjaro.jpeg';
+import tirzepatide from '../assets/images/tirzpetide.jpeg';
+import wegovy from '../assets/images/wegovy.jpeg';
+import semaglutide from '../assets/images/semaglutide.jpeg';
+import ozempic from '../assets/images/ozempic.jpeg';
+import zepbound from '../assets/images/zepbound.jpeg';
 
 interface Product {
   id: number;
@@ -11,7 +17,7 @@ interface Product {
   usage: string;
   effectiveness: string;
   sideEffects: string[];
-  imageSrc: string;
+  imageSrc: any;
 }
 
 const products: Product[] = [
@@ -25,7 +31,7 @@ const products: Product[] = [
     usage: 'Weekly subcutaneous injection',
     effectiveness: 'Clinical trials have shown average weight loss of 15-20% of body weight over 72 weeks',
     sideEffects: ['Nausea', 'Diarrhea', 'Decreased appetite', 'Vomiting', 'Constipation'],
-    imageSrc: 'https://placehold.co/600x400/e2e8f0/475569?text=Mounjaro',
+    imageSrc: mounjaro,
   },
   {
     id: 2,
@@ -33,35 +39,59 @@ const products: Product[] = [
     genericName: 'Semaglutide',
     doses: ['0.25mg', '0.5mg', '1mg', '1.7mg', '2.4mg'],
     description: 'Clinically proven weight management medication for long-term results.',
-    longDescription: 'Wegovy (semaglutide) is a GLP-1 receptor agonist that helps reduce appetite and food intake. It\'s specifically approved for chronic weight management in adults with obesity or overweight with at least one weight-related condition.',
+    longDescription: 'Wegovy (semaglutide) is a prescription medication for chronic weight management. It works by mimicking a hormone that targets areas of the brain involved in appetite regulation.',
     usage: 'Weekly subcutaneous injection',
-    effectiveness: 'Average weight loss of 12-15% of body weight over 68 weeks in clinical trials',
+    effectiveness: 'Patients may lose up to 15% of their body weight over 68 weeks',
     sideEffects: ['Nausea', 'Diarrhea', 'Vomiting', 'Constipation', 'Abdominal pain'],
-    imageSrc: 'https://placehold.co/600x400/e2e8f0/475569?text=Wegovy',
+    imageSrc: wegovy,
   },
   {
     id: 3,
-    name: 'Semaglutide',
+    name: 'Ozempic',
     genericName: 'Semaglutide',
-    doses: ['0.25mg', '0.5mg', '1mg'],
+    doses: ['0.25mg', '0.5mg', '1mg', '2mg'],
     description: 'Effective treatment for weight management with proven results.',
-    longDescription: 'Semaglutide is a GLP-1 receptor agonist that helps control blood sugar levels and reduce appetite. It\'s proven effective for weight management when used alongside lifestyle modifications.',
-    usage: 'Weekly subcutaneous injection',
-    effectiveness: 'Significant weight loss observed in clinical trials, comparable to branded versions',
-    sideEffects: ['Nausea', 'Diarrhea', 'Vomiting', 'Constipation', 'Headache'],
-    imageSrc: 'https://placehold.co/600x400/e2e8f0/475569?text=Semaglutide',
+    longDescription: 'Ozempic (semaglutide) is a once-weekly injection that helps regulate blood sugar and reduce appetite through GLP-1 receptor activation. It offers consistent and reliable weight management results.',
+    usage: 'Weekly subcutaneous injection in abdomen, thigh, or upper arm',
+    effectiveness: 'Clinical studies show significant weight loss of 12-14% of body weight over 52 weeks',
+    sideEffects: ['Nausea', 'Vomiting', 'Diarrhea', 'Abdominal pain', 'Constipation'],
+    imageSrc: ozempic,
   },
   {
     id: 4,
+    name: 'Zepbound',
+    genericName: 'Tirzepatide',
+    doses: ['2.5mg', '5mg', '7.5mg', '10mg', '12.5mg', '15mg'],
+    description: 'Advanced medication for comprehensive weight management support.',
+    longDescription: 'Zepbound (tirzepatide) is a cutting-edge medication that combines GIP and GLP-1 receptor activation. Starting at 2.5mg, the dose is gradually increased based on individual response and tolerability.',
+    usage: 'Weekly subcutaneous injection with flexible timing, with or without meals',
+    effectiveness: 'Patients on the maximum dose (15mg) achieved average weight loss of 18% of body weight in clinical trials',
+    sideEffects: ['Nausea', 'Diarrhea', 'Decreased appetite', 'Vomiting', 'Abdominal discomfort'],
+    imageSrc: zepbound,
+  },
+  {
+    id: 5,
+    name: 'Semaglutide',
+    genericName: 'Semaglutide',
+    doses: ['0.25mg', '0.5mg', '1mg', '1.7mg', '2.4mg'],
+    description: 'Generic version of proven weight management medication.',
+    longDescription: 'Semaglutide is the active ingredient in both Wegovy and Ozempic. This generic version provides the same GLP-1 receptor agonist benefits, helping to reduce appetite and food intake for effective weight management.',
+    usage: 'Weekly subcutaneous injection in abdomen, thigh, or upper arm',
+    effectiveness: 'Demonstrates comparable weight loss results to branded versions, with 12-15% body weight reduction over 52 weeks',
+    sideEffects: ['Nausea', 'Diarrhea', 'Vomiting', 'Constipation', 'Decreased appetite'],
+    imageSrc: semaglutide,
+  },
+  {
+    id: 6,
     name: 'Tirzepatide',
     genericName: 'Tirzepatide',
-    doses: ['2.5mg', '5mg', '7.5mg', '10mg'],
-    description: 'Advanced medication for comprehensive weight management support.',
-    longDescription: 'Tirzepatide is a dual GIP and GLP-1 receptor agonist that offers powerful weight management benefits. It works by reducing appetite and food intake while improving metabolic function.',
-    usage: 'Weekly subcutaneous injection',
-    effectiveness: 'Substantial weight loss demonstrated in clinical studies, similar to branded versions',
-    sideEffects: ['Nausea', 'Diarrhea', 'Decreased appetite', 'Vomiting', 'Constipation'],
-    imageSrc: 'https://placehold.co/600x400/e2e8f0/475569?text=Tirzepatide',
+    doses: ['2.5mg', '5mg', '7.5mg', '10mg', '12.5mg', '15mg'],
+    description: 'Generic form of dual GIP/GLP-1 receptor agonist medication.',
+    longDescription: 'Tirzepatide is the active ingredient found in Mounjaro and Zepbound. This generic version offers the same innovative dual-action mechanism, targeting both GIP and GLP-1 receptors for enhanced weight management results.',
+    usage: 'Weekly subcutaneous injection with flexible administration timing',
+    effectiveness: 'Shows equivalent efficacy to branded versions, with potential for 15-20% body weight reduction over 72 weeks',
+    sideEffects: ['Nausea', 'Decreased appetite', 'Diarrhea', 'Vomiting', 'Gastrointestinal discomfort'],
+    imageSrc: tirzepatide,
   },
 ];
 
@@ -88,6 +118,11 @@ export default function Products() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Explore our range of FDA-approved medications for effective weight management
             </p>
+            <div className="mt-8 bg-blue-50 rounded-xl p-6 text-left">
+              <p className="text-gray-700 leading-7">
+                At Kroger Pharmacy, we take pride in providing only FDA-approved medications sourced directly from authorized manufacturers and distributors. Our commitment to quality and authenticity means we maintain strict supply chain standards, which can sometimes lead to limited availability. Despite these challenges, we've successfully maintained consistent supply to our valued customers since 2021, thanks to our strong relationships with legitimate pharmaceutical partners. This dedication to providing only genuine, high-quality medications has earned us the trust of our community and contributed to our long-standing success.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -98,14 +133,15 @@ export default function Products() {
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:gap-y-12 lg:space-y-0">
             {products.map((product) => (
               <div key={product.id} className="group relative">
-                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                <div className="relative h-48 w-full overflow-hidden rounded-xl bg-white shadow-md sm:h-56 lg:h-64">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   <img
                     src={product.imageSrc}
                     alt={product.name}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-contain p-4 filter contrast-125 brightness-95"
                   />
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold text-gray-900">
+                <h3 className="mt-4 text-xl font-semibold text-gray-900">
                   <button
                     onClick={() => setSelectedProduct(product)}
                     className="text-left hover:text-purple-600"

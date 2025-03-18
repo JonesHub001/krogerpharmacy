@@ -6,7 +6,13 @@ import { Footer } from '../components/Footer';
 import LiveOrderLedger from '../components/Home/LiveOrderLedger';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import mounjaro from '../assets/images/mounjaro.jpeg';
+import tirzepatide from '../assets/images/tirzpetide.jpeg';
+import wegovy from '../assets/images/wegovy.jpeg';
+import semaglutide from '../assets/images/semaglutide.jpeg';
+import test1 from '../assets/images/test1.jpeg';
+import test2 from '../assets/images/test2.jpeg';
+import test3 from '../assets/images/test3.jpeg';
 const products = [
   {
     id: 1,
@@ -14,7 +20,7 @@ const products = [
     genericName: 'Tirzepatide',
     doses: ['2.5mg', '5mg', '7.5mg', '10mg', '12.5mg', '15mg'],
     description: 'A revolutionary treatment for weight management, helping you achieve your health goals.',
-    imageSrc: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800',
+    imageSrc: mounjaro,
   },
   {
     id: 2,
@@ -22,7 +28,7 @@ const products = [
     genericName: 'Semaglutide',
     doses: ['0.25mg', '0.5mg', '1mg', '1.7mg', '2.4mg'],
     description: 'Clinically proven weight management medication for long-term results.',
-    imageSrc: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=800',
+    imageSrc: wegovy,
   },
   {
     id: 3,
@@ -30,7 +36,7 @@ const products = [
     genericName: 'Semaglutide',
     doses: ['0.25mg', '0.5mg', '1mg'],
     description: 'Effective treatment for weight management with proven results.',
-    imageSrc: 'https://images.unsplash.com/photo-1631549916768-4119b4123a21?auto=format&fit=crop&q=80&w=800',
+    imageSrc:  semaglutide,
   },
   {
     id: 4,
@@ -38,7 +44,7 @@ const products = [
     genericName: 'Tirzepatide',
     doses: ['2.5mg', '5mg', '7.5mg', '10mg'],
     description: 'Advanced medication for comprehensive weight management support.',
-    imageSrc: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800',
+    imageSrc: tirzepatide,
   },
 ];
 
@@ -46,22 +52,22 @@ const testimonials = [
   {
     id: 1,
     quote: "I've lost 50 pounds in 6 months with their program. The medical support was exceptional!",
-    author: "Sarah M.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=800",
+    author: "Racheal M.",
+    image: test2,
     rating: 5,
   },
   {
     id: 2,
     quote: "The professional guidance and medication helped me achieve my weight loss goals safely.",
-    author: "Michael R.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
+    author: "Zack J.",
+    image: test1,
     rating: 5,
   },
   {
     id: 3,
     quote: "Outstanding support and results. I'm down 35 pounds and feeling great!",
-    author: "Jennifer L.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
+    author: "Laura Russel.",
+    image: test3,
     rating: 5,
   },
 ];
