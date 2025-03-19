@@ -72,7 +72,7 @@ export default function OrderForm() {
     quantity: 1,
     specialInstructions: ''
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+  // const [errors, setErrors] = useState<FormErrors>({});
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
