@@ -247,8 +247,8 @@ const About = () => {
             <div>
               <h3 className="border-l border-purple-600 pl-6 font-semibold text-gray-900">Email</h3>
               <div className="mt-4 border-l border-gray-200 pl-6 text-gray-600">
-                <p>support@krogerpharmacy.com</p>
-                <p>info@krogerpharmacy.com</p>
+                
+                <p>skrogerpharmacy@gmail.com</p>
               </div>
             </div>
           </div>

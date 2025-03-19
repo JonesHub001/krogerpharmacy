@@ -6,7 +6,7 @@ import { CheckCircleIcon, TruckIcon } from '@heroicons/react/24/outline';
 const staticOrders = [
   {
     id: 'ORD-2025-1234',
-    date: '2025-03-18',
+    date: new Date().toISOString().split('T')[0],
     time: '14:23',
     destination: 'Austin, Texas',
     product: 'Wegovy',
@@ -14,7 +14,7 @@ const staticOrders = [
   },
   {
     id: 'ORD-2025-1235',
-    date: '2025-03-18',
+    date: new Date().toISOString().split('T')[0],
     time: '15:45',
     destination: 'Miami, Florida',
     product: 'Mounjaro',
@@ -22,7 +22,7 @@ const staticOrders = [
   },
   {
     id: 'ORD-2025-1236',
-    date: '2025-03-18',
+    date: new Date().toISOString().split('T')[0],
     time: '16:10',
     destination: 'Seattle, Washington',
     product: 'Ozempic',
@@ -30,7 +30,7 @@ const staticOrders = [
   },
   {
     id: 'ORD-2025-1237',
-    date: '2025-03-18',
+    date: new Date().toISOString().split('T')[0],
     time: '16:55',
     destination: 'Denver, Colorado',
     product: 'Zepbound',
@@ -38,12 +38,53 @@ const staticOrders = [
   },
   {
     id: 'ORD-2025-1238',
-    date: '2025-03-18',
+    date: new Date().toISOString().split('T')[0],
     time: '17:30',
     destination: 'Boston, Massachusetts',
     product: 'Tirzepatide',
     status: 'Delivered',
   },
+  {
+    id: 'ORD-2025-1239',
+    date: new Date().toISOString().split('T')[0],
+    time: '18:15',
+    destination: 'Chicago, Illinois',
+    product: 'Mounjaro',
+    status: 'In Transit',
+  },
+  {
+    id: 'ORD-2025-1240',
+    date: new Date().toISOString().split('T')[0],
+    time: '19:00',
+    destination: 'Portland, Oregon',
+    product: 'Wegovy',
+    status: 'Delivered',
+  },
+  {
+    id: 'ORD-2025-1241',
+    date: new Date().toISOString().split('T')[0],
+    time: '19:45',
+    destination: 'San Diego, California',
+    product: 'Tirzepatide',
+    status: 'In Transit',
+  },
+  {
+    id: 'ORD-2025-1242',
+    date: new Date().toISOString().split('T')[0],
+    time: '20:30',
+    destination: 'Nashville, Tennessee',
+    product: 'Ozempic',
+    status: 'Delivered',
+  },
+  {
+    id: 'ORD-2025-1243',
+    date: new Date().toISOString().split('T')[0],
+    time: '21:15',
+    destination: 'Dallas, Texas',
+    product: 'Zepbound',
+    status: 'In Transit',
+  },
+
 ];
 
 const LiveOrderLedger: React.FC = () => {
@@ -60,6 +101,7 @@ const LiveOrderLedger: React.FC = () => {
         lastOrder.time = now.getHours().toString().padStart(2, '0') + ':' + 
                         now.getMinutes().toString().padStart(2, '0');
         lastOrder.status = Math.random() > 0.5 ? 'Delivered' : 'In Transit';
+        lastOrder.date = new Date().toISOString().split('T')[0];
         newOrders.unshift(lastOrder);
         return newOrders;
       });
