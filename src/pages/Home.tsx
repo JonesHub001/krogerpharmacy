@@ -6,10 +6,10 @@ import { Footer } from '../components/Footer';
 import LiveOrderLedger from '../components/Home/LiveOrderLedger';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import mounjaro from '../assets/images/mounjaro.jpeg';
-import tirzepatide from '../assets/images/tirzpetide.jpeg';
-import wegovy from '../assets/images/wegovy.jpeg';
-import semaglutide from '../assets/images/semaglutide.jpeg';
+import mounjaro from '../assets/images/mounjaro.jpg';
+import tirzepatide from '../assets/images/oz.jpg';
+import wegovy from '../assets/images/wegovy.jpg';
+import semaglutide from '../assets/images/zeb.jpg';
 import test1 from '../assets/images/test1.jpeg';
 import test2 from '../assets/images/test2.jpeg';
 import test3 from '../assets/images/test3.jpeg';
@@ -32,17 +32,17 @@ const products = [
   },
   {
     id: 3,
-    name: 'Semaglutide',
-    genericName: 'Semaglutide',
-    doses: ['0.25mg', '0.5mg', '1mg'],
+    name: 'Zepbound',
+    genericName: 'Zepbound',
+    doses: ['2.5mg', '5mg', '7.5mg', '10mg', '12.5mg', '15mg'],
     description: 'Effective treatment for weight management with proven results.',
     imageSrc:  semaglutide,
   },
   {
     id: 4,
-    name: 'Tirzepatide',
-    genericName: 'Tirzepatide',
-    doses: ['2.5mg', '5mg', '7.5mg', '10mg'],
+    name: 'Ozempic',
+    genericName: 'Semaglutide',
+    doses: ['0.25mg', '0.5mg', '1mg', '2mg'],
     description: 'Advanced medication for comprehensive weight management support.',
     imageSrc: tirzepatide,
   },

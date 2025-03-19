@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import mounjaro from '../assets/images/mounjaro.jpeg';
+import mounjaro from '../assets/images/mounjaro.jpg';
 import tirzepatide from '../assets/images/tirzpetide.jpeg';
 import wegovy from '../assets/images/wegovy.jpeg';
 import semaglutide from '../assets/images/semaglutide.jpeg';
