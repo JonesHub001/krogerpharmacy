@@ -18,15 +18,15 @@ interface OrderFormData {
   prescriptionImage?: File;
 }
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  medication?: string;
-  dosage?: string;
-  prescriptionFile?: string;
-}
+// interface FormErors {
+//   name?: string;
+//   email?: string;
+//   phone?: string;
+//   address?: string;
+//   medication?: string;
+//   dosage?: string;
+//   prescriptionFile?: string;
+// }
 
 const medications = [
   {
