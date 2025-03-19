@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { StarIcon } from '@heroicons/react/20/solid';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
