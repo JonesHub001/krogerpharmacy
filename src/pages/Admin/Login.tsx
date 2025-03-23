@@ -1,27 +1,45 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import { ADMIN_EMAIL, ADMIN_PASSWORD } from '../../constants/admin';
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login, user } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // If user is already logged in, redirect to orders page
+    if (user) {
+      const from = location.state?.from?.pathname || '/admin/orders';
+      navigate(from);
+    }
+  }, [user, location.state, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
-    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-      localStorage.setItem('isAdmin', 'true');
-      navigate('/admin/orders', { replace: true });
-    } else {
-      setError('Invalid credentials');
+    try {
+      const success = await login(email, password);
+      if (success) {
+        // Redirect to the protected route they were trying to access
+        const from = location.state?.from?.pathname || '/admin/orders';
+        navigate(from);
+      } else {
+        setError('Invalid credentials');
+      }
+    } catch (err) {
+      console.error('Error logging in:', err);
+      setError('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
