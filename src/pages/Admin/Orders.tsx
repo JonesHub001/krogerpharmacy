@@ -96,10 +96,20 @@ const Orders = () => {
                   <div className="text-sm font-medium text-gray-900">{order.customer_name}</div>
                   <div className="text-sm text-gray-500">{order.email}</div>
                   <div className="text-sm text-gray-500">{order.phone}</div>
+                  <div className="text-sm text-gray-500 mt-1">
+                    <span className="font-medium">Address: </span>
+                    {order.address}, {order.city}, {order.state} {order.postal_code}, {order.country}
+                  </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   <div className="text-sm font-medium text-gray-900">{order.medication_name}</div>
                   <div className="text-sm text-gray-500">Qty: {order.quantity}</div>
+                  {order.special_instructions && (
+                    <div className="text-sm text-gray-500 mt-1">
+                      <span className="font-medium">Instructions: </span>
+                      {order.special_instructions}
+                    </div>
+                  )}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {order.quantity}
