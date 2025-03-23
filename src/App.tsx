@@ -7,7 +7,6 @@ import About from './pages/About';
 import Order from './pages/Order';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
-import AdminLayout from './components/AdminLayout';
 import Orders from './pages/Admin/Orders';
 import Login from './pages/Admin/Login';
 
@@ -26,14 +25,12 @@ function App() {
           </Route>
 
           {/* Admin routes */}
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route path="login" element={<Login />} />
-            <Route path="orders" element={
-              <ProtectedRoute>
-                <Orders />
-              </ProtectedRoute>
-            } />
-          </Route>
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/orders" element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          } />
         </Routes>
       </AuthProvider>
     </Router>
