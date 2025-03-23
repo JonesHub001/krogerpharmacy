@@ -1,6 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 
 interface AdminLayoutProps {
   children?: React.ReactNode;
@@ -9,7 +8,7 @@ interface AdminLayoutProps {
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { isAdmin } = useAuth();
+ 
 
   const handleLogout = () => {
     localStorage.removeItem('isAdmin');
